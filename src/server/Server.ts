@@ -1,13 +1,13 @@
 import express from "express";
-
+import "dotenv/config";
+import { router } from "./routes";
 
 const server = express();
 
-// ROTAS
-server.get("/", (_, res) => {
-   
 
-    return res.send("Olá dev!")
-});
+server.use(express.json());
+
+server.use(router);
+
 
 export { server };
